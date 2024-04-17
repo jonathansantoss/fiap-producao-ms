@@ -38,7 +38,7 @@ jobs:
           
       - name: ls
         run: |
-          cd ..
+          cd /
           ls
         
       # Check the Quality Gate status.
