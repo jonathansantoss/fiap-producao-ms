@@ -30,6 +30,7 @@ jobs:
             -Dsonar.verbose=true
             -Dsonar.projectKey=jonathansantoss_fiap-producao-ms
             -Dsonar.organization=jonathansantoss
+            -Dsonar.analysis.mode=
         uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ce26616ab69961f90b45412d6fc2b44a2ae61298
