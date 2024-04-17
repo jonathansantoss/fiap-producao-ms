@@ -38,7 +38,7 @@ jobs:
           
       - name: List files in the repository
         run: |
-          cd src
+          cd src/.scannerwork
           ls -a
       - run: echo "🍏 This job's status is ${{ job.status }}."
         
@@ -49,7 +49,7 @@ jobs:
         # Force to fail step after specific time.
         timeout-minutes: 5
         with:
-          scanMetadataReportFile: /src/.scannerwork/report-task.txt
+          scanMetadataReportFile: src/.scannerwork/report-task.txt
         env:
          SONAR_TOKEN: ce26616ab69961f90b45412d6fc2b44a2ae61298
          # SONAR_HOST_URL: https://sonarcloud.io
