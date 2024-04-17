@@ -45,7 +45,7 @@ jobs:
         timeout-minutes: 5
         env:
          SONAR_TOKEN: ce26616ab69961f90b45412d6fc2b44a2ae61298
-         SONAR_HOST_URL: https://sonarcloud.io
+         # SONAR_HOST_URL: https://sonarcloud.io
   
       # Optionally you can use the output from the Quality Gate in another step.
       # The possible outputs of the `quality-gate-status` variable are `PASSED`, `WARN` or `FAILED`.
