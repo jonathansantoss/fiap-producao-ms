@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: fiap-producao-ms
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  sonarqube:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v4
+        with:
+          # Disabling shallow clones is recommended for improving the relevancy of reporting
+          fetch-depth: 0
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ce26616ab69961f90b45412d6fc2b44a2ae61298
+          SONAR_HOST_URL: https://sonarcloud.io
