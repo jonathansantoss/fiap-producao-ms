@@ -34,14 +34,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ce26616ab69961f90b45412d6fc2b44a2ae61298
-          SONAR_HOST_URL: https://sonarcloud.io
-
+          SONAR_HOST_URL: https://sonarcloud.io]
+          
       - name: ls
-        run: ls
-
-      - name: ls src
         run: |
-          cd src
+          cd ..
           ls
         
       # Check the Quality Gate status.
@@ -50,6 +47,8 @@ jobs:
         uses: sonarsource/sonarqube-quality-gate-action@master
         # Force to fail step after specific time.
         timeout-minutes: 5
+        with:
+          scanMetadataReportFile: /github/workspace/src/.scannerwork/
         env:
          SONAR_TOKEN: ce26616ab69961f90b45412d6fc2b44a2ae61298
          # SONAR_HOST_URL: https://sonarcloud.io
