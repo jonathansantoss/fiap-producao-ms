@@ -34,3 +34,13 @@ jobs:
         env:
           SONAR_TOKEN: ce26616ab69961f90b45412d6fc2b44a2ae61298
           SONAR_HOST_URL: https://sonarcloud.io
+
+      # Check the Quality Gate status.
+      - name: SonarQube Quality Gate check
+        id: sonarqube-quality-gate-check
+        uses: sonarsource/sonarqube-quality-gate-action@master
+        # Force to fail step after specific time.
+        timeout-minutes: 5
+        env:
+         SONAR_TOKEN: ce26616ab69961f90b45412d6fc2b44a2ae61298
+         SONAR_HOST_URL: https://sonarcloud.io
