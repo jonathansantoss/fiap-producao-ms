@@ -26,6 +26,7 @@ jobs:
         with:
           projectBaseDir: src
           args: >
+            -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
             -Dsonar.tests=tests/
             -Dsonar.verbose=true
         uses: sonarsource/sonarqube-scan-action@master
