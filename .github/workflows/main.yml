@@ -32,5 +32,6 @@ jobs:
             -Dsonar.organization=jonathansantoss
         uses: sonarsource/sonarcloud-github-action@master
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ce26616ab69961f90b45412d6fc2b44a2ae61298
           SONAR_HOST_URL: https://sonarcloud.io
