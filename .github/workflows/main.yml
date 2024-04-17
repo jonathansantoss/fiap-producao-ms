@@ -36,11 +36,10 @@ jobs:
           SONAR_TOKEN: ce26616ab69961f90b45412d6fc2b44a2ae61298
           SONAR_HOST_URL: https://sonarcloud.io]
           
-      - name: ls
+      - name: List files in the repository
         run: |
-          cd ..
-          cd ..
-          ls
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
         
       # Check the Quality Gate status.
       - name: SonarQube Quality Gate check
